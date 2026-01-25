@@ -1,0 +1,11 @@
+#meu-botao {
+    color: blue; 
+    /* color: rgb(0, 0 255); */
+    width: 100px;
+    height: 25px;
+    border-radius: 10px;
+}
+
+#meu-botao:hover {
+    opacity: 0.8;
+}
