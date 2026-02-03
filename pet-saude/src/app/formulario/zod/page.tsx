@@ -5,7 +5,6 @@ import styles from "../page.module.css";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { yupResolver } from "@hookform/resolvers/yup";
 
 import { medicamentoFormSchema, type MedicamentoFormData } from "@/schemas";
 import { Medicamento, TipoUsoMedicamento } from "@/types/medicamento";
@@ -26,8 +25,7 @@ export default function PaginaFormulario() {
     formState: { errors },
     reset,
   } = useForm<MedicamentoFormData>({
-    // resolver: zodResolver(medicamentoFormSchema),
-    resolver: yupResolver(medicamentoFormSchema), // Alternativa com Yup
+    resolver: zodResolver(medicamentoFormSchema),
   });
 
   const onSubmit = (data: MedicamentoFormData) => {
