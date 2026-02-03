@@ -1,8 +1,15 @@
 "use client";
 import { Medicamento, TipoUsoMedicamento } from "@/types/medicamento";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 import { useListaEditavel } from "@/hooks/useListaEditavel";
 import { USO_MEDICAMENTO } from "@/lib/constants";
+import {
+  InfoMedicamentoCSS,
+  InfoMedicamentoProps,
+  InfoMedicamentoTailwind,
+} from "@/components/InfoMedicamento";
+import { InfoMedicamentoBootstrap } from "@/components/InfoMedicamento/Bootstrap";
+import { use } from "react";
 
 const gerarNumeroAleatorio = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -12,7 +19,30 @@ const tiposUso: TipoUsoMedicamento[] = Object.values(
   USO_MEDICAMENTO,
 ) as TipoUsoMedicamento[];
 
-export default function PaginaMedicamentos() {
+type TipoComponenteMedicamento = "css" | "tailwind" | "bootstrap";
+type ComponenteMedicamentoProps = {
+  tipo: TipoComponenteMedicamento;
+} & InfoMedicamentoProps;
+
+const ComponenteMedicamento = ({
+  tipo,
+  medicamento,
+}: ComponenteMedicamentoProps) => {
+  if (tipo === "css") return <InfoMedicamentoCSS medicamento={medicamento} />;
+  if (tipo === "bootstrap")
+    return <InfoMedicamentoBootstrap medicamento={medicamento} />;
+  if (tipo === "tailwind")
+    return <InfoMedicamentoTailwind medicamento={medicamento} />;
+
+  return null;
+};
+
+export default function PaginaMedicamentos({
+  params,
+}: {
+  params: Promise<{ componente: TipoComponenteMedicamento }>;
+}) {
+  const { componente } = use(params);
   const itensIniciais: Medicamento[] = [
     {
       nome: "Medicamento 1",
@@ -51,16 +81,7 @@ export default function PaginaMedicamentos() {
         <ul className={styles["lista"]}>
           {items.map((item, index) => (
             <li key={index} className={styles["item-lista"]}>
-              <div className={styles["item-info"]}>
-                <span className={styles["item-nome"]}>{item.nome}</span>
-                <div className={styles["item-detalhes"]}>
-                  <span className={styles["badge"]}>{item.dosagem}</span>
-                  <span className={styles["badge"]}>
-                    A cada {item.intervalo}
-                  </span>
-                  <span className={styles["badge"]}>Via {item.uso}</span>
-                </div>
-              </div>
+              <ComponenteMedicamento tipo={componente} medicamento={item} />
               <button
                 className={styles["botao-remover"]}
                 onClick={() => removerItem(index)}

@@ -1,0 +1,27 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.nome {
+  color: #023047;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.detalhes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background-color: #90e0ef;
+  color: #023047;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
