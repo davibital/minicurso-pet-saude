@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import { CartaoTema } from "@/app/components/CartaoTema";
-import { TemaContext } from "@/app/context/TemaContext";
+import { CartaoTema } from "@/components/CartaoTema";
+import { TemaContext } from "@/context/TemaContext";
 
 export default function PaginaTema() {
   const [tema, setTema] = useState<"claro" | "escuro">("escuro");

@@ -1,7 +1,7 @@
 "use client";
 import styles from "./page.module.css";
-import { Lista } from "@/app/components/Lista";
-import { BotaoContador } from "@/app/components/BotaoContador";
+import { Lista } from "@/components/Lista";
+import { BotaoContador } from "@/components/BotaoContador";
 
 export default function Home() {
   const itensLista = ["Primeiro item", "Segundo item", "Terceiro item"];

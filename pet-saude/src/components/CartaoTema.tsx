@@ -1,4 +1,4 @@
-import { Informacoes } from "@/app/components/Informacoes";
+import { Informacoes } from "@/components/Informacoes";
 
 interface CartaoTemaProps {
   titulo: string;

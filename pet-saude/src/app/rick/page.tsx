@@ -1,4 +1,4 @@
-import { CharacterData } from "@/app/components/CharacterData";
+import { CharacterData } from "@/components/CharacterData";
 
 export default function Rick() {
   return <CharacterData />;

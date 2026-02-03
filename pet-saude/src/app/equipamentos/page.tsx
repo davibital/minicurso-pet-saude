@@ -1,6 +1,6 @@
 "use client";
 import styles from "./page.module.css";
-import { useListaEditavel } from "@/app/hooks/useListaEditavel";
+import { useListaEditavel } from "@/hooks/useListaEditavel";
 
 export default function PaginaEquipamentos() {
   const itensIniciais = ["Equipamento 1", "Equipamento 2", "Equipamento 3"];
