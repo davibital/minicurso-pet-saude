@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Snackbar, Alert, Button, Stack, AlertColor } from "@mui/material";
 
-export default function ToastMUI() {
+export const ToastMUI = () => {
   const [open, setOpen] = useState(false);
   const [severity, setSeverity] = useState<AlertColor>("success");
   const [message, setMessage] = useState("");
@@ -82,4 +82,4 @@ export default function ToastMUI() {
       </Snackbar>
     </div>
   );
-}
+};

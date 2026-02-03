@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 import { toast } from "sonner";
 
-export default function ToastShadcn() {
+export const ToastShadcn = () => {
   return (
     <div className="p-5">
       <h2 className="text-2xl font-bold mb-4">Exemplo de Toast - Shadcn/UI</h2>
@@ -41,4 +41,4 @@ export default function ToastShadcn() {
       <Toaster />
     </div>
   );
-}
+};

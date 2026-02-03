@@ -1,7 +1,7 @@
 "use client";
 
-import ToastMUI from "@/components/ToastExemplos/ToastMUI";
-import ToastShadcn from "@/components/ToastExemplos/ToastShadcn";
+import { ToastMUI } from "@/components/ToastExemplos/ToastMUI";
+import { ToastShadcn } from "@/components/ToastExemplos/ToastShadcn";
 
 export default function ToastExemplosPage() {
   return (
